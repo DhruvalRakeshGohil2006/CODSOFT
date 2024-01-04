@@ -3,21 +3,18 @@ import java.util.*;
 
 class NumberGame
 {
-    int randomNum, guessedNum, finalScore, maxAttempts = 5, countOfTries = 0, maxRange = 100;
+    int randomNum, guessedNum, finalScore, maxAttempts = 3, countOfTries = 0, maxRange = 100;
     boolean correctGuess = false;
 
     public void guessNumber()
     {
         Scanner sc = new Scanner(System.in);
-
         Random rc = new Random();
 
         randomNum = rc.nextInt(maxRange) + 1;
 
        while (!correctGuess) 
        {
-            
-
             if (countOfTries < maxAttempts) 
             {
                 System.out.println("Enter the number to be guessed from 1 to 100: ");
@@ -25,24 +22,23 @@ class NumberGame
 
                 if (guessedNum < randomNum) 
                 {
-                    System.out.println("The guessed number is lesser than the correct number");
+                    System.out.println("The guessed number is lesser than the correct number\n");
                     countOfTries++;
                 }
                 else if (guessedNum > randomNum) 
                 {
-                    System.out.println("The guessed number is greater than the correct number");  
+                    System.out.println("The guessed number is greater than the correct number\n");  
                     countOfTries++;
                 }
                 else
                 {
+                    correctGuess = true;
                     System.out.println("You guessed it correct");
                     countOfTries++;
                     finalScore = calculateScore(countOfTries);
                     System.out.println("Your score is: " + finalScore + " out of 100");
                     playAgain();
-                    //break;
                 }
-                System.out.println(countOfTries);
             }
             else
             {
@@ -94,7 +90,7 @@ class NumberGame
         else
         {
             finalScore = calculateScore(countOfTries);
-            System.out.println("Your score is: " + finalScore + " out of 100");
+            System.out.println("\nYour score is: " + finalScore + " out of 100");
         }
         sc2.close();
     }

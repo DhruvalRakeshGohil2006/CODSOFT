@@ -5,6 +5,31 @@ class StudentGradeCalculator
 {
     static int numOfSub, subMarks = 0, totalMarks = 0;
     static float avgPerc;
+    
+    public static void gradeCheck()
+    {
+        if (avgPerc <= 100 && avgPerc >= 85) 
+        {
+            System.out.println("A");
+        }
+        else if (avgPerc <= 84 && avgPerc >= 70) 
+        {
+            System.out.println("B");
+        }
+        else if (avgPerc <= 69 && avgPerc >= 50) 
+        {
+            System.out.println("C");
+        }
+        else if (avgPerc <= 49 && avgPerc >= 35) 
+        {
+            System.out.println("D");
+        }
+        else
+        {
+            System.out.println("F");
+        }
+    }
+
     public static void main(String args[])
     {
         Scanner sc = new Scanner(System.in);
@@ -33,7 +58,6 @@ class StudentGradeCalculator
 
         for (int i = 0; i < numOfSub; i++) 
         {
-            //System.out.println("Subject " + (i+1) + ": " + subjectName[i]);
             System.out.format("%7s %14s", (i+1),subjectName[i]);
             System.out.println();
         }
@@ -44,7 +68,6 @@ class StudentGradeCalculator
         System.out.println("Enter the marks out of 100");
         for (int i = 0; i < numOfSub; i++) 
         {
-            //System.out.print("Subject " + (i+1) + ": ");
             System.out.print(subjectName[i] + ": ");
             subMarks = sc.nextInt();
             marks[i] = subMarks;
@@ -61,7 +84,6 @@ class StudentGradeCalculator
 
         for (int i = 0; i < numOfSub; i++) 
         {
-            //System.out.println("Subject " + (i+1) + ": " + subjectName[i]);
             System.out.format("%7s %14s %7s", (i+1), subjectName[i], marks[i]);
             System.out.println();
         }
@@ -82,27 +104,4 @@ class StudentGradeCalculator
         sc.close();
     }
 
-    public static void gradeCheck()
-    {
-        if (avgPerc <= 100 && avgPerc >= 85) 
-        {
-            System.out.println("A");
-        }
-        else if (avgPerc <= 84 && avgPerc >= 70) 
-        {
-            System.out.println("B");
-        }
-        else if (avgPerc <= 69 && avgPerc >= 50) 
-        {
-            System.out.println("C");
-        }
-        else if (avgPerc <= 49 && avgPerc >= 35) 
-        {
-            System.out.println("D");
-        }
-        else
-        {
-            System.out.println("F");
-        }
-    }
 }

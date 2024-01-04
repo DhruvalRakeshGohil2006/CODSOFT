@@ -20,11 +20,6 @@ class Atm extends BankAccount
 {
     int deposit(double amount)
     {
-        // System.out.println("Enter account no: ");
-        // accountNo = sc.nextInt();
-
-        // System.out.println("Enter the amount you want to deposit in account no: " + accountNo);
-        // depositAmount = sc.nextDouble();
         System.out.println("Amount to deposit: " + amount);
 
         totalBalance += amount;
@@ -39,12 +34,6 @@ class Atm extends BankAccount
     
     int withdraw(double amount)
     {
-        /* System.out.println("Enter account no: ");
-        accountNo = sc.nextInt(); */
-
-        // System.out.println("Enter the amount you want to withdraw from account no: " + accountNo);
-        // withdrawAmount = sc.nextDouble();
-
         System.out.println("\nAmount to withdraw: " + amount);
 
         if(amount > totalBalance)
@@ -55,7 +44,6 @@ class Atm extends BankAccount
         else
         {
             totalBalance = totalBalance - amount;
-
             System.out.println("\nWithdraw transaction completed succesfully");
         }
 
@@ -74,14 +62,12 @@ class Atm extends BankAccount
 
     void promptAccountNo()
     {
-        
         System.out.println("Enter your account no: ");
         accountNo = sc.nextInt();
 
         if (accountNo == 1234) 
         {
             promptUserSelection();
-            //System.out.println("----------------------------------------------------------------");
         }
         else
         {
@@ -97,16 +83,13 @@ class Atm extends BankAccount
 
     void promptUserSelection()
     {
-        //greetUser();
-
         System.out.println("\n*** Select Transaction type ***");
         System.out.println("1. Deposit");
         System.out.println("2. Withdraw");
         System.out.println("3. Check Balance");
         System.out.println("Press -1 to Exit");
-        //System.out.println("Press 1 to deposit and 2 to withdraw");
-        int option = sc.nextInt();
 
+        int option = sc.nextInt();
         double amount;
         int anotherTransaction;
 

@@ -182,5 +182,3 @@ class Quiz
         this.correctOption = correctOption;
     }
 }
-
-
